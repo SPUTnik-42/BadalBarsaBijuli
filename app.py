@@ -37,7 +37,7 @@ def preprocess_weather_data(data):
 # Main function to run the Streamlit app
 def main():
     # Streamlit UI
-    st.title('Cloudburst Prediction App')
+    st.title('BBB App')
 
     # Get user input for city name
     city_name = st.text_input('Enter City Name')
