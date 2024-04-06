@@ -20,13 +20,11 @@ def preprocess_weather_data(data):
     humidity = data['main']['humidity']
     pressure = data['main']['pressure']
     wind_speed = data['wind']['speed']
-    wind_gust = data['wind']['gust']
     clouds = data['clouds']['all']
 
     input_data = pd.DataFrame({
     'MinimumTemperature': [temp_min],
     'MaximumTemperature': [temp_max],
-    'WindGustSpeed':wind_gust,
     'WindSpeed3pm': [wind_speed],
     'Humidity3pm': [humidity],
     'Pressure3pm': [pressure],
