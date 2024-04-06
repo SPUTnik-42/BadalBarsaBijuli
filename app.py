@@ -68,9 +68,13 @@ def main():
         st.write(prediction)
 
         if(prediction):
-            st.write('**cloudburst**')
+            st.write('**VERY HIGH CHANCES OF CLOUDBURST !!!**')
+            st.markdown("![Alt Text](https://media.giphy.com/media/3orieZMmRdBlKk5nY4/giphy.gif)")
+
         else:
-            st.write('**No cloudburst**')
+            st.write('**No cloudburst ! FALSE ALARM !**')
+            st.markdown("![Alt Text](https://media.giphy.com/media/xT5LMGBztUr4SRI25i/giphy.gif)")
+        
 
 # Run the main function
 if __name__ == '__main__':
