@@ -15,30 +15,23 @@ def fetch_weather_data(api_key, city_name):
 def preprocess_weather_data(data):
     # Extract relevant features
     # You can extract more features as per your requirements
-    weather = {
-        'temp_min': data['main']['temp_min'],
-        'temp_max': data['main']['temp_max'],
-        'humidity': data['main']['humidity'],
-        'pressure': data['main']['pressure'],
-        'wind_speed': data['wind']['speed'],
-        'clouds': (data['clouds']['all'])/10
-    }
-
-    temp_min = weather['temp_min']
-    temp_max = weather['temp_max']
-    humidity = weather['humidity']
-    pressure = weather['pressure']
-    wind_speed = weather['wind_speed']
-    clouds = weather['clouds']
+    temp_min = data['main']['temp_min']
+    temp_max = data['main']['temp_max']
+    humidity = data['main']['humidity']
+    pressure = data['main']['pressure']
+    wind_speed = data['wind']['speed']
+    wind_gust = data['wind']['gust']
+    clouds = data['clouds']['all']
 
     input_data = pd.DataFrame({
-    'temp_min': [temp_min],
-    'temp_max': [temp_max],
-    'wind_speed': [wind_speed],
-    'humidity': [humidity],
-    'pressure': [pressure],
-    'clouds': [clouds]
-})
+    'MinimumTemperature': [temp_min],
+    'MaximumTemperature': [temp_max],
+    'WindGustSpeed':wind_gust,
+    'WindSpeed3pm': [wind_speed],
+    'Humidity3pm': [humidity],
+    'Pressure3pm': [pressure],
+    'Cloud3pm': [clouds]
+    })
     return input_data
 
 # Main function to run the Streamlit app
