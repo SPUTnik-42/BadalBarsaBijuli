@@ -3,10 +3,6 @@ import streamlit as st
 import requests
 import pandas as pd
 import joblib
-import bz2file as bz2
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
 
 # Define a function to fetch weather data from OpenWeather API
 def fetch_weather_data(api_key, city_name):
